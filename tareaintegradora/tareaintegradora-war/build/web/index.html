@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!--
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
+-->
+
+<html>
+    <head>
+        <title></title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+        </script>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h2>Calcular ITBMS</h2>
+        Número:<input type="text" name="base" id="base"/>
+        <button type="button" id="calcularBtn">Calcular</button>
+        <div id="resultado">
+            Resultado: <span></span>
+        </div>
+        <script type="text/javascript">
+            jQuery("#calcularBtn").click(function(){
+                var base = jQuery("#base").val();
+                //jQuery.get("http://proyectofinal2-alexmaylin1.rhcloud.com/tareaintegradora-war/resources/calcular",{
+                jQuery.get("http://localhost:8088/tareaintegradora-war/resources/calcular",{
+                    base:base
+                },function(resultado){
+                    jQuery("#resultado span").text(resultado)
+                })
+            })
+        </script>
+    </body>
+</html>
